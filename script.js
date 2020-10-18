@@ -1,5 +1,4 @@
 //VARIABLE DECLARATIONS
-
 var quiz = document.querySelector("#quiz");
 var intro = document.querySelector("#introduction");
 var assesFT = document.querySelector("#assess-ft");
@@ -96,7 +95,6 @@ var questionsArray = [
 ];
 
 //EVENT LISTENERS
-
 startBtn.addEventListener("click", startQuiz);
 answersDiv.addEventListener("click", assesSelection);
 submit.addEventListener("click", addToHighscores);
@@ -113,7 +111,6 @@ $("#staticBackdrop").on("hidden.bs.modal", function (e) {
 init();
 
 //FUNCTIONS
-
 function init() {
   timeSpan.textContent = timeRemining;
   quiz.style.display = "none";
@@ -199,9 +196,9 @@ function showQuestion() {
     indexArray.splice(rndIndex, 1);
   });
 }
-
+//disables the question answers once an answer is selected
 function disableQuestions() {
-  let questionsAssed = document.querySelectorAll(".answerButton");
+  var questionsAssed = document.querySelectorAll(".answerButton");
   questionsAssed.forEach((element) => {
     element.setAttribute(
       "class",
@@ -218,7 +215,8 @@ function disableQuestions() {
     }
   });
 }
-
+//function to check the answer selected to the correct answer
+//calls the updateProgress() to move the progress bar along
 function assesSelection(event) {
   if (event.target.matches("button")) {
     var index = parseInt(event.target.getAttribute("data-index"));
@@ -249,7 +247,7 @@ function assesSelection(event) {
     }, timeInterval);
   }
 }
-
+//this will update the progress bar as the user moves through the quiz
 function updateProgress() {
   progress = Math.floor((currentQuestion / questionsArray.length) * 100);
   var styleStr = String("width: " + progress + "%; height: 100%;");
@@ -290,7 +288,7 @@ function removeQuestionsButtons() {
     child = answersDiv.lastElementChild;
   }
 }
-
+//function for after all the questions have been answered || time runs out
 function gameOver(cause) {
   if (cause === "questions_done") {
     setTimeout(() => {
@@ -334,7 +332,7 @@ function gameOver(cause) {
     removeQuestionsButtons();
   }, 5000);
 }
-
+//function to add the final score to high score list
 function addToHighscores() {
   var highScoreElement = document.createElement("li");
   var highscoreStr = initials.value + " - " + correctScore;
@@ -345,10 +343,10 @@ function addToHighscores() {
   localStorage.setItem("highscore", localHighscoresArray);
   justRegistered = true;
   initials.value = "";
-  // Modal
+
   $("#staticBackdrop").modal("show");
 }
-
+//loads high scores when high score link is clicked
 function loadHighScores() {
   var tempHighscoresArray = [];
   var tempHighscoresObject = {};
@@ -433,7 +431,7 @@ function loadHighScores() {
     tempHighscoresObject = {};
   }
 }
-
+//function to put the clear high scores button into affect
 function clearHighscores() {
   localHighscoresArray = [];
   localStorage.setItem("highscore", localHighscoresArray);
