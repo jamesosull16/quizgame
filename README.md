@@ -25,3 +25,18 @@
 ![High Score Page](./assets/alldone.jpg)
 
 ---
+
+## Links
+
+---
+
+- [Ironman Triathlon Quiz](https://jamesosull16.github.io/quizgame/)
+- [Github Repository](https://github.com/jamesosull16/quizgame)
+
+---
+
+## Resources
+
+- W3 Schools
+- Bootstrap
+- MDN web docs
