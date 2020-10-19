@@ -2,6 +2,18 @@
   display: block;
 }
 
-#imlogomaincard {
-  height: 200px;
+h3 {
+  font-size: 50px;
+  font-weight: bolder;
+  padding-bottom: 50px;
+}
+
+.card-image-overlay p {
+  font-size: 30px;
+  font-weight: bold;
+  
+}
+
+#ironmanimg {
+  height: 400px;
 }
