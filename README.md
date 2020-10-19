@@ -14,14 +14,14 @@
 
 ### Introduction Page and Start of the quiz
 
-![Intro Page](./assets.intropage.png)
+![Intro Page](./assets/intro.jpg)
 
 ### Question Page
 
-![Question Page](./assets.intropage.png)
+![Question Page](./assets/question.jpg)
 
 ### High Score Page
 
-![High Score Page](./assets.highscore.png)
+![High Score Page](./assets/alldone.jpg)
 
 ---
